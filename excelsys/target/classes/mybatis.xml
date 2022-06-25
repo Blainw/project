@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    <settings>-->
+<!--        &lt;!&ndash; 打印查询语句 &ndash;&gt;-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING" />-->
+<!--    </settings>-->
+    <typeAliases>
+        <!--给全限定名起别名-->
+<!--        <typeAlias type="cn.edu.wtu.wdm.model.po.Lecturer" alias="Lecturer"></typeAlias>-->
+
+        <!--name指定的是包名，这个包中所有类，类名就是别名-->
+        <package name="cn.edu.wtu.wdm.model"></package>
+    </typeAliases>
+
+    <plugins><!--要在environment上面加，有顺序，分页插件-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+    <mappers>
+        <!--编译后的class路径，由于编译后的路径和原文件路径一致，故就这样写，指定sql mapper（sql映射文件）的路径位置-->
+<!--        <mapper resource="cn/edu/wtu/wdm/model/dao/LecturerDao.xml"/>-->
+
+        <!--第二种方式，用包名，包下面的所有xml文件都可以映射
+        要求 1：xml文件要和接口名称一样，大小写也一样
+            2：xml文件和dao接口要在同一目录
+        -->
+        <package name="cn.edu.wtu.wdm.model.dao"/>
+    </mappers>
+
+</configuration>

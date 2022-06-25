@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/mvc
+         https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        ">
+
+    <!--声明组件扫描器，扫描那些带注解的类，比如springmvc用的控制类,给这些类创建对象，并放入springmvc容器中-->
+    <context:component-scan base-package="cn.edu.wtu.wdm.controller"/>
+
+    <!--声明springmv框架中的视图解析器，帮助开发人员设置视图文件的路径-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--前缀：视图文件的路径-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--后缀：视图文件的扩展名-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--加了这个注解驱动之后，在运行时，会多几个类，其中一个就是MappingJackson2HttpMessageConverter类
+       这个类就是用来将我们得到的对象，转换为json格式的类
+       功能：1.响应ajax
+            2.解决静态资源的访问问题
+       -->
+    <mvc:annotation-driven >
+        <!--下面是处理前后端时间格式转换问题-->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                        <property name="dateFormat">
+                            <bean class="java.text.SimpleDateFormat">
+                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd" />
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!--web.xml文件中用/做了拦截静态资源处理，在这里指定多种静态资源的访问-->
+    <mvc:resources   mapping="/static/**"   location="/static/" />
+
+    <!--声明拦截器，拦截Controller的请求-->
+    <mvc:interceptors>
+        <!--一个标签就是一个拦截器-->
+        <mvc:interceptor>
+            <!--指定拦截的uri地址-->
+            <mvc:mapping path="/ToPage/**"/>
+
+            <!--放行uri
+                <mvc:exclude-mapping path="/ToPage/login.action"/>
+            -->
+            <!--声明拦截器对象-->
+            <bean class="cn.edu.wtu.wdm.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
+    <!--文件上传要求配置-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--默认编码-->
+        <property name="defaultEncoding" value="utf-8"/>
+        <!--在内存中最大容量，低于此值，只保留在内存里，超过此阈值，生成硬盘上的临时文件-->
+        <property name="maxInMemorySize" value="102400"/>
+        <!--表示不限制文件大小-->
+        <property name="maxUploadSize" value="-1"/>
+    </bean>
+
+</beans>

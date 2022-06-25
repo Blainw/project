@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><!--约束文件，限制文件要符合mybatis的要求-->
+<mapper namespace="cn.edu.wtu.wdm.model.dao.LecturerDao"><!--命名空间，可以是字符串，但一般是dao接口的全限定名称-->
+
+    <!--根据传入的账户和密码来进行数据库比对-->
+    <select id="CheckLecturer" resultMap="lec" >
+        select * from Lecturer where LNum=#{LNum} and Pwd=#{Pwd}
+    </select>
+
+    <!--添加一个用户-->
+    <insert id="InsertLecturer">
+        insert into Lecturer(LNum,LName,Pwd,LEmail) values(#{LNum},#{LName},#{Pwd},#{LEmail})
+    </insert>
+
+    <!--修改当前登录进来的用户信息-->
+    <update id="UpdateLecturer" parameterType="Lecturer">
+        update Lecturer
+        <set>
+            <if test="LNum!=null">
+                LNum=#{LNum},
+            </if>
+            <if test="LName!=null">
+             LName=#{LName},
+             </if>
+            <if test="Pwd!=null">
+            Pwd=#{Pwd},
+             </if>
+            <if test="LEmail!=null">
+                LEmail=#{LEmail},
+            </if>
+        </set>
+     where LID=#{LID}
+ </update>
+
+    <!--注册前ajax检查邮箱-->
+    <select id="CheckEmail" resultType="Integer">
+        select count(*) from lecturer where LEmail=#{LEmail}
+    </select>
+
+    <!--注册前ajax检查用户名-->
+    <select id="CheckLNum" resultType="Integer">
+        select count(*) from lecturer where LNum=#{LNum}
+    </select>
+
+    <!--将lecturer映射成lec，并将lecturer类的属性都分别映射成数据库的表的列名-->
+    <resultMap id="lec" type="Lecturer">
+        <id column="LID" property="LID"></id>
+        <result column="LNum" property="LNum"></result>
+        <result column="LName" property="LName"></result>
+        <result column="Pwd" property="Pwd"></result>
+        <result column="LEmail" property="LEmail"></result>
+    </resultMap>
+<!--
+    select标签,id是唯一标识，可以自定义，但一般使用接口中的方法名称
+    resulttype是结果类型，这个结果是sql语句执行后得到Resultset，遍历这个ResultSet得到的java对象的类型，一般用全限定名称
+    resultMap是一个映射：
+    1.这个标签里面的id是要映射成为的对象，可以自命名，type是你要映射的主体，是全限定名，因为我在mybatis.xml
+    文件中给cn.edu.wtu.wdm.model.po.Lecturer起别名为lecturer，故这里的type为lecturer
+    2.这个标签下面的<id>标签表明的是你的数据库中对应表的主键名，column为你的表列名，而property为你的po对象的属性名，这就可以解决你数据库
+    中表的列名和你创建的po类的属性名不一致的问题，他们之间可以形成映射关系
+    3.<result>标签则是其他的列名，里面的属性和id标签一样
+-->
+
+</mapper>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.wtu.wdm.model.dao.CourseDao">
+
+    <!--显示所有课程信息-->
+    <select id="ShowHomePage" resultType="Course">
+        select c.*,l.LName from course c join lecturer l on c.LNum=l.LNum
+        <where>
+            <if test="isPhase!=null">
+                CPhase= #{isPhase}
+            </if>
+        </where>
+        order by c.CNO
+    </select>
+
+    <!--根据传入的教师编号，来选择这个教师所讲课程的信息-->
+    <select id="ShowOneCourse" resultType="Course">
+        select c.*,l.LName from course c join lecturer l on c.LNum=l.LNum
+        <where>
+            <if test="LNum!=null">
+                c.LNum=#{LNum}
+            </if>
+            <if test="isPhase!=null">
+                and CPhase= #{isPhase}
+            </if>
+        </where>
+    </select>
+
+    <!--根据传入的课程名称和是否有讲师号来查询课程信息-->
+    <select id="QueryByCName" resultType="Course">
+        select c.*,l.LName from course c join lecturer l on c.LNum=l.LNum
+        <where>
+            <if test="CName!=null">
+                c.cname like concat('%',#{CName},'%')
+            </if>
+            <if test="LNum!=null">
+                and c.lnum= #{LNum}
+            </if>
+        </where>
+    </select>
+
+    <!--ajax检查课程编号是否存在-->
+    <select id="CheckCNO" resultType="Integer">
+        select count(*) from course where cno=#{CNO}
+    </select>
+
+    <!--修改当前课程信息-->
+    <update id="UpdateCourse" parameterType="Course">
+        update Course
+        <set>
+            <if test="CNO!=null">
+                CNO=#{CNO},
+            </if>
+            <if test="CName!=null">
+                CName=#{CName},
+            </if>
+            <if test="CPhase!=null">
+                CPhase=#{CPhase},
+            </if>
+            <if test="CIntroduce!=null">
+                CIntroduce=#{CIntroduce},
+            </if>
+            <if test="CTime!=null">
+                CTime=#{CTime},
+            </if>
+        </set>
+        where CID=#{CID}
+    </update>
+
+    <!--添加当前课程-->
+    <insert id="AddCourse">
+        insert into Course(CNO,CName,CPhase,CIntroduce,CTime,LNum) values(#{CNO},#{CName},#{CPhase},#{CIntroduce},#{CTime},#{LNum})
+    </insert>
+
+    <!--删除课程-->
+    <delete id="DeleteCourse">
+        delete from course where cno=#{CNO};
+    </delete>
+
+    <!--修改视频地址-->
+    <update id="AddVideoUrl" parameterType="Course">
+        update Course
+        <set>
+            <if test="CVideo!=null">
+                CVideo=#{CVideo},
+            </if>
+        </set>
+        where CNO=#{CNO}
+    </update>
+
+    <!--查询该讲师是否有这个课程号-->
+    <select id="IsHaveCNO" resultType="Integer">
+        select count(*) from course where cno=#{CNO} and lnum=#{LNum}
+    </select>
+
+    <!--删除视频地址-->
+    <update id="DeleteVideo" parameterType="Course">
+        update Course
+        set    CVideo=null
+        where  CNO=#{CNO}
+    </update>
+</mapper>

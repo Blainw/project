@@ -1,0 +1,264 @@
+@charset "utf-8";
+
+input{
+	background-color: rgba(216, 191, 216, 0.5);
+}
+input:-webkit-autofill {
+	-webkit-text-fill-color: #f0edf3;
+	-webkit-box-shadow: 0 0 0px 1000px  rgba(212, 186, 212, 0.8) inset !important;
+}
+			/*.clearBoth::after{*/
+			/*	display: block;*/
+			/*	content: "";*/
+			/*	clear: both;*/
+			/*}*/
+			*{
+				padding: 0px;
+				margin: 0px;
+				list-style: none;
+				font-size: 12px;
+				text-decoration: none;
+			}
+			/*body{*/
+			/*	overflow: hidden;*/
+			/*	background-image: url(../img/Desertforwdm.jpg);*/
+			/*	background-repeat: no-repeat;*/
+			/*}*/
+
+		     .container{
+				 box-sizing: border-box;/*加了之后盒子大小不受padding影响*/
+				/*width: 900px;*/
+				 width: 58.59%;
+				height: 87.01%;
+				margin: auto;
+				padding-top: 80px;
+			}
+			.container>.left{
+					/*width: 520px;*/
+					/*height: 392px;*/
+				width: 57.78%;
+				height: 59.78%;
+					float: left;
+			}
+			.container>.right{
+				/*width: 334px;*/
+				/*height: 392px;*/
+				width: 37.11%;
+				height: 59.78%;
+				border: 1px solid #999999;
+				margin-top: 0px;
+				margin-left: 40px;
+				float: left;
+				border-radius: 5px;
+			}
+
+			.container>.left>.left_left{
+				vertical-align: auto;
+				float: left;
+			}
+			.emailfont{
+				color: #224cd0;
+				font-size: 24px;
+			}
+			p{
+				font-size: 14px;
+					display: block;
+				    margin-block-start: 1em;
+				    margin-block-end: 1em;
+				    margin-inline-start: 0px;
+				    margin-inline-end: 0px;
+			}
+			.right1{
+				/*width: 334px;*/
+				/*height: 50px;*/
+				width: 100%;
+				height: 12.75%;
+				border-bottom: 1px solid #999999;
+				margin-top: 0px;
+			}
+			.right>.right1>div:nth-child(1){
+				/*width: 166px;*/
+				/*height: 50px;*/
+				width: 50%;
+				height: 12.75%;
+				float: left;
+				text-align: center;
+				line-height: 50px;
+				display: block;
+			}
+			.right>.right1>div:nth-child(2){
+				/*width: 167px;*/
+				/*height: 50px;*/
+				width: 50%;
+				height: 12.75%;
+				float:left ;
+				text-align: center;
+				line-height: 50px;
+				display: block;
+			}
+			.asize{
+				font-size: 16px;
+			}
+			.right2{
+				/*width: 334px;*/
+				width: 100%;
+				text-align: center;
+				padding-top: 0px;
+			}
+			.right3{
+				/*width: 313px;*/
+				/*height: 30px;*/
+				width: 93.71%;
+				height: 8.7%;
+				padding-left: 20px;
+				padding-top: 20px;
+			}
+			.right4{
+				/*width: 334px;*/
+				width: 100%;
+				text-align: center;
+				padding-top: 0px;
+			}
+			.right5{
+				/*width: 334px;*/
+				/*height: 20px;*/
+				width: 100%;
+				height: 5.8%;
+				/*margin-top: 85px;*/
+				margin-top: 15%;
+				/* border: 1px solid; */
+				
+			}
+			.right2 input{
+				/*width: 280px;*/
+				/*height: 40px;*/
+				width: 83.83%;
+				height: 11.63%;
+				border: 1px solid #999999;
+				margin-top: 10px;
+				padding-left: 10px;
+				border-radius: 2px;
+			}
+			.right2 input:focus{
+				outline:1px solid #4892e7;
+				
+			}
+			.right2 input:focus::-webkit-input-placeholder{
+				color: #D6DFEA;
+			}
+			input::-webkit-input-placeholder{
+				color:  #999999;
+				font-size: 16px;
+			}
+			.right3 input{
+				width: 18px;
+				height: 18px;
+				border-radius: 0px;
+				float: left;
+			}
+			.right3>span{
+				display:block;
+				float: left;
+				margin-left: 1.5%;
+				margin-top: 1px;
+			}
+			.right4 input{
+				/*width: 296px;*/
+				/*height: 40px;*/
+				width: 88.62%;
+				height: 11.63%;
+				border: 1px solid #999999;
+				padding-left: 10px;
+				border-radius: 2px;
+				background-color:   cornflowerblue;
+				font-size: 20px;
+				color: white;
+				cursor: pointer;
+			}
+			.right1 label{
+				cursor: pointer;
+			}
+			.right1 label:checked{
+				color: red;
+			}
+			.lelogin{
+				/*width: 334px;*/
+				/*height: 344px;*/
+				width: 100%;
+				height: 87.75%;
+				float: left;
+			}
+			.stlogin{
+				/*width: 334px;*/
+				/*height: 344px;*/
+				width: 100%;
+				height: 87.75%;
+				display: none;
+				float: left;
+			}
+			#st:checked ~.lelogin{
+				display: none;
+			}
+			#st:checked~.stlogin{
+				display: block;
+			}
+			.st{
+				color: #758d9e;
+			}
+			#st:checked~.right1 .le{
+				color: #999;
+			}
+			#st:checked~.right1 .st{
+				color: #333;
+			}
+			[type="radio"]{
+				display: none;
+			}
+			.mosaic{
+				width: auto;
+				height: 200px;
+				text-align: center;
+				padding-top: 25px;
+			}
+			.mosaic label{
+				text-align: center;
+				display: block;
+			}
+			#wxautologin{
+				width: 315px;
+				height: 30px;
+				padding-left: 20px;
+				padding-top: 20px;
+				text-align: center;
+				position: relative;
+			}
+			#wxautologin input{
+				width: 18px;
+				height: 18px;
+				border-radius: 0px;
+				float: left;
+				position: absolute;
+				left: 130px;
+				
+			}
+			#wxautologin>span{
+				display:block;
+				float: left;
+				margin-left: 5px;
+				margin-top: 1px;
+				position: absolute;
+				left: 147px;
+			}
+
+			.errormessage,.admin_login_tips{
+				display:block;
+				/*width: 334px;*/
+				/*height: 30px;*/
+				width: 100%;
+				height: 8.72%;
+				color: red;
+				text-align: center;
+				font-size: 15px;
+				line-height: 30px;
+
+			}

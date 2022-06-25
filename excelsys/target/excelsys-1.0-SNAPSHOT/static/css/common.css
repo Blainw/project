@@ -1,0 +1,69 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+
+
+.head{
+    width: 100%;
+    /*height: 62px;*/
+    height: 8.22%;
+    /*background-color: #6f95c8;*/
+    /*border: 1px solid #6f95c8;*/
+    overflow: hidden;
+    background: rgba(5,69,126,0);
+}
+
+html,body{
+    height: 100%;
+    overflow: hidden;
+    background-image: url(../img/Desertforwdm.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.head>.right{
+    float: right;
+    line-height: 62px;
+    padding-right: 40px;
+}
+.head>.right a{
+    color: #7897c1;
+}
+.head>.right a:hover{
+    text-decoration: underline;
+}
+.head>.right span{
+    color: #b6b6b6;
+}
+.head>.right label{
+    color: #2244b4ed;
+    margin-right: 10px;
+}
+.footer{
+    width: 100%;
+    height: 4.77%;
+    /*background-color: #EFF4FA;*/
+    /*border: 1px solid #d6dfea;*/
+    overflow: hidden;
+    background: rgba(5,69,126,0);
+    position: fixed;
+    bottom: 0px;
+}
+.footer>.menu{
+    text-align: center;
+    line-height: 36px;
+}
+.footer>.menu a:hover{
+    text-decoration: underline;
+}
+.footer>.menu .gray{
+    color: gray;
+}
+.footer>.menu>a{
+    color: #7897c1;
+}
