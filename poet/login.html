@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"  />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+<body>
+  <div class="main">
+      <div class="form-module">
+			<div class="form-content">
+			<div class="title">
+				<p class="title-item">欢迎登录古诗文网!</p>
+			</div>
+			
+			<div class="login">
+				<!-- <form action="" method="get" id="myform"> -->
+				<p class="form_item" id="p1">
+					<label>用户名：</label>
+					<input type="text" name="" id="in1">
+					<span id="userprompt" class="spanstyle">用户名6-10位字母开头</span>
+				</p>
+				<p class="form_item" id="p2">
+					<label>密码：</label>
+					<input type="password" name="" id="in2">
+					<span id="pwdprompt" class="spanstyle">密码大于6位小于10位</span>
+				</p>
+				<p class="to_register"> <a href="./register.html">立即注册</a></p>
+				<input type="submit" id="login_btn" class="btn" value="登录">
+				<!-- </form> -->
+			</div>
+			</div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="./js/jquery-3.6.0.js">
+	
+</script>
+<script type="text/javascript">
+	$("#in1").blur(function(){
+		checkUser();
+		
+	});
+	$("#in2").blur(function(){
+		checkPwd();
+	});	
+	$("#login_btn").click(function(){
+			
+			var flag=true;
+			var flag1=false;
+			if(!checkUser()) flag=false;
+			if(!checkPwd()) flag=false;
+			if(flag){
+				window.localStorage.setItem('user',$("#in1").val());
+				flag1=true;
+				window.localStorage.setItem('flag1',flag1);
+				window.location.href="index.html";
+			}
+		});
+	function checkUser(){
+			if($("#in1").val()==""||$("#in1").val()==null){
+				$("#userprompt").html("用户名不能为空");
+				$("#userprompt").addClass("aa");
+				return false;
+			}
+			var username=$("#in1").val();
+			var reg=/^[a-zA-Z][a-zA-Z0-9]{5,9}$/;
+					if(reg.test(username)==false){
+						$("#userprompt").html("用户名不正确！");
+						$("#userprompt").addClass("aa");
+						return false;
+					}
+			$("#userprompt").html("");
+			return true;
+		}
+		function checkPwd(){
+				if($("#in2").val()==""||$("#in2").val()==null){
+					$("#pwdprompt").html("密码不能为空");
+					$("#pwdprompt").addClass("aa");
+					return false;
+				}
+				var pwd=$("#in2").val();
+				var reg=/^[A-Za-z0-9]{6,10}$/;
+				if(reg.test(pwd)==false){
+							$("#pwdprompt").html("密码格式不正确！");
+							$("#pwdprompt").addClass("aa");
+							return false;
+						}
+				$("#pwdprompt").html("");
+				return true;
+			}
+			
+</script>
+</html>

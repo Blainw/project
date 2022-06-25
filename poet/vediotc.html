@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>视频教程</title>
+	<style type="text/css">
+		ol>li>img{
+			position: absolute;
+			right: 0;
+		}
+	</style>
+    <link rel="stylesheet" href="css/vediotc.css">
+</head>
+<body>
+<section id="play">
+	<br>
+    <h1>视频教程</h1>
+	<br>
+	<br>
+    <ul>
+        <li><img src="img/1.PNG"><p>忆江南</p><span>1</span></li>
+        <li><img src="img/2.PNG"><p>如梦令</p><span>2</span></li>
+        <li>
+            <ol>
+                <li><span>3</span>《画》<img src="./img/orange.jpg"><p>加入看单</p></li>
+                <li><span>4</span>《风》<img src="./img/green.jpg"><p>加入看单</p></li>
+                <li><span>5</span>《小池》<img src="./img/orange.jpg"><p>加入看单</p></li>
+                <li><span>6</span>《梅花》<img src="./img/orange.jpg"><p>加入看单</p></li>
+                <li><span>7</span>《小儿垂钓》<img src="./img/orange.jpg"><p>加入看单</p></li>
+                <li><span>8</span>《所见》<img src="./img/green.jpg"><p>加入看单</p></li>
+                <li><span>9</span>《大林寺桃花》<img src="./img/green.jpg"><p>加入看单</p></li>
+                <li><span>10</span>《凉州词》<img src="./img/green.jpg"><p>加入看单</p></li>
+            </ol>
+        </li>
+    </ul>
+</section>
+</body>
+<script type="text/javascript" src="./js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$("span:lt(3)").css("background-color","#F4A709");
+	$("span:gt(2)").css("background-color","#A4A4A4");
+	$("ol").css("background-color","#F0F0F0");
+	$("ol>li").mouseover(function(){
+	  $("p:hidden").show();
+	});
+	$("ol>li").mouseout(function(){
+	  $("p:hidden").hid();
+	});
+</script>
+</html>

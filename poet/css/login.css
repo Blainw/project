@@ -1,0 +1,110 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background: url(../img/s1.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.main{
+	width: 100%;
+	height: 100vh;
+	background-color: burlywood;
+	background-size: 100% 100%;
+	position: relative;
+	background-color: rgba(255, 228, 196, 0.904);
+
+}
+.title .title-item{
+	font-size: 40px;
+	font-weight: 500;
+	color: #FFFFFF;
+	position: absolute;
+	left: 40%;
+	top: 200px;
+	transform: translateX(-50%);
+}
+.login{
+	width: 420px;
+	height: 320px;
+	box-shadow: 0 0 10px 5px lightgrey;
+	background-color: #fff;
+	border-radius: 5px;
+	position: absolute;
+	right: 120px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.login{
+	padding: 30px;
+	box-sizing: border-box;
+}
+.login .form_item{
+	display: flex;
+	margin-bottom: 20px;
+	align-items: center;
+}
+.login label{
+	width: 100px;
+	text-align: right;
+}
+.login input{
+	outline: none;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+.login input:focus{
+	border: 2px solid skyblue;
+}
+
+.login input[type="text"],input[type="password"]{
+	width: 150px;
+	height: 30px;
+}
+.to_register{
+	text-align: left;
+	margin-left: 40px;
+	font-size: 14px;
+}
+.to_register a{
+	color: blue;
+	cursor: pointer;
+	text-decoration: none;
+}
+.btn{
+	width: 250px;
+	height: 50px;
+	line-height: 50px;
+	background: burlywood;
+	color: #ffffff;
+	margin-top: 20px;
+	margin-left: 10px;
+	font-size: 20px;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 50px;
+    outline: none;
+	border: none;
+}
+
+.btn:active{
+	background: rgb(104, 86, 63);
+}
+
+.spanstyle{
+	margin-left: 10px;
+	width:170px ;
+	height: 30px;
+	color: #808080;
+	font-size: 10px;
+	line-height: 30px;
+}
+.aa{
+	color: #FF0000;
+}
+
+#login_btn{
+	border-radius: 50px;
+	border: none;
+}

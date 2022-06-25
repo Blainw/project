@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>诗句</title>
+    <link rel="stylesheet" href="./css/verse.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p class="logo">古诗文</p>
+            <ul>
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./verse.html">诗文</a></li>
+                <li><a href="./famous.html">名句</a></li>
+                <li><a href="./auther.html">作者</a></li>
+                <li><a href="shopping.html">购物车</a></li>
+                <li class="item" onmouseover="onOver(this)" onmouseout="onOut(this)">
+                    <span id="showMore">更多<i class="iconfont icon-xiala"></i></span>
+                    <ul class="companyIntroduceUrl">
+                        <li>古籍</li>
+                        <li>藏头诗</li>
+                        <li>词牌名</li>
+                        <li>诗句</li>
+                    </ul>
+                </li>
+            </ul>
+            <form>
+                <input type="text" id="search" />
+                <input type="submit" id="btn_search" value="搜索">
+            </form>
+            <p class="operation_container">
+                <a href="./login.html">登录</a>
+                <a href="./register.html">注册</a>
+            </p>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="titletype">
+            <div class="son1">
+                <h1>推荐诗文<span style="color:#999999; display:none;" id="id-Liebiao">列表</span><span style=" display:none;"
+                        id="id-Xiexian">/</span><span style="color:#999999; display:none;" id="id-Zhaiyao">略缩</span>
+                </h1>
+            </div>
+
+            <div id="type1" class="son2" style=" height:26px;">
+                <div class="sleft">
+                    <span>类型：</span>
+                </div>
+                <div class="sright">
+
+                    <a href="#">节日</a>
+
+                    <a href="#">春节</a>
+
+                    <a style=" width:62px;"
+                        href="#">元宵节</a>
+
+                    <a style=" width:62px;"
+                        href="#">寒食节</a>
+
+                    <a style=" width:62px;"
+                        href="#">清明节</a>
+
+                    <a style=" width:62px;"
+                        href="#">端午节</a>
+
+                    <a style=" width:62px;"
+                        href="#">七夕节</a>
+
+                    <a style=" width:62px;"
+                        href="#">中秋节</a>
+
+                    <a style=" width:62px;"
+                        href="#">重阳节</a>
+
+                    <a style=" width:79px;"
+                        href="#">小学古诗</a>
+
+                    <a style=" width:79px;"
+                        href="#">初中古诗</a>
+
+                    <a style=" width:79px;"
+                        href="#">高中古诗</a>
+
+                    <a style="width:90px;"
+                        href="#">小学文言文</a>
+
+                    <a style="width:90px;"
+                        href="#">初中文言文</a>
+
+                    <a style="width:90px;"
+                        href="#">高中文言文</a>
+
+                    <a style="width:90px;"
+                        href="#">唐诗三百首</a>
+
+                    <a style="width:90px;"
+                        href="#">古诗三百首</a>
+
+                    <a style="width:90px;"
+                        href="#">宋词三百首</a>
+
+                    <a style="width:90px;"
+                        href="#">古诗十九首</a>
+
+                </div>
+                <div class="sright2">
+                    <img id="imgType1" src="./img/jianTop.png" alt="展开" width="12" height="12" onclick="clickType()">
+                </div>
+            </div>
+            <div id="type2" class="son2" style=" height:26px;">
+                <div class="sleft">
+                    <span>作者：</span>
+                </div>
+                <div class="sright">
+
+                    <a href="#">李白</a>
+
+                    <a href="#">杜甫</a>
+
+                    <a href="#">苏轼</a>
+
+                    <a href="#">王维</a>
+
+                    <a href="#">杜牧</a>
+
+                    <a href="#">陆游</a>
+
+                    <a href="#">李煜</a>
+
+                    <a href="#">元稹</a>
+
+                    <a href="#">韩愈</a>
+
+                    <a href="#">岑参</a>
+
+                    <a href="#">齐己</a>
+
+                    <a href="#">贾岛</a>
+
+                    <a href="#">柳永</a>
+
+                    <a href="#">曹操</a>
+
+                    <a href="#">李贺</a>
+
+                    <a style=" width:62px;"
+                        href="#">白居易</a>
+
+                    <a style=" width:62px;"
+                        href="#">辛弃疾</a>
+
+                    <a style=" width:62px;"
+                        href="#">李清照</a>
+
+                    <a style=" width:62px;"
+                        href="#">刘禹锡</a>
+
+                    <a style=" width:62px;"
+                        href="#">李商隐</a>
+
+                    <a style=" width:62px;"
+                        href="#">陶渊明</a>
+
+                    <a style=" width:62px;"
+                        href="#">孟浩然</a>
+
+                    <a style=" width:62px;"
+                        href="#">柳宗元</a>
+
+                    <a style=" width:62px;"
+                        href="#">王安石</a>
+
+                    <a style=" width:62px;"
+                        href="#">欧阳修</a>
+
+                    <a style=" width:62px;"
+                        href="#">韦应物</a>
+
+                    <a style=" width:62px;"
+                        href="#">温庭筠</a>
+
+                    <a style=" width:62px;"
+                        href="#">刘长卿</a>
+
+                    <a style=" width:62px;"
+                        href="#">王昌龄</a>
+
+                </div>
+                <div class="sright2"><img id="imgType2" src="./img/jianTop.png" alt="展开" width="12"
+                        height="12" onclick="clickType2()"></div>
+            </div>
+            <div id="type3" class="son2" style=" height:26px;">
+                <div class="sleft">
+                    <span>朝代：</span>
+                </div>
+                <div class="sright">
+
+                    <a href="#">先秦</a>
+
+                    <a href="#">两汉</a>
+
+                    <a href="#">魏晋</a>
+
+                    <a href="#">南北朝</a>
+
+                    <a href="#">隋代</a>
+
+                    <a href="#">唐代</a>
+
+                    <a href="#">五代</a>
+
+                    <a href="#">宋代</a>
+
+                    <a href="#">金朝</a>
+
+                    <a href="#">元代</a>
+
+                    <a href="#">明代</a>
+
+                    <a href="#">清代</a>
+
+                </div>
+            </div>
+            <div class="son2" style="margin-bottom:5px; border:0px;">
+                <div class="sleft">
+                    <span>形式：</span>
+                </div>
+                <div class="sright">
+
+                    <a href="#">诗</a>
+
+                    <a href="#">词</a>
+
+                    <a href="#">曲</a>
+
+                    <a href="#">文言文</a>
+
+                </div>
+            </div>
+        </div>
+        <div id="leftZhankai" style="display: block;">
+            <div style=" width:1px; height:1px; overflow:hidden;">
+                <textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1"
+                    id="txtare236">瞻彼旱麓，榛楛济济。岂弟君子，干禄岂弟。瑟彼玉瓒，黄流在中。岂弟君子，福禄攸降。鸢飞戾天，鱼跃于渊。岂弟君子，遐不作人？清酒既载，骍牡既备。以享以祀，以介景福。瑟彼柞棫，民所燎矣。岂弟君子，神所劳矣。莫莫葛藟，施于条枚。岂弟君子，求福不回。——先秦·佚名《旱麓》https://so.gushiwen.cn/shiwenv_fa2c3e80a7e1.aspx</textarea>
+            </div>
+            <div class="sons">
+                <div class="cont">
+                    <div class="yizhu">
+                        <img src="./img/bei-pic.png" width="25" height="25" alt="背诵" id="btnBeisongfa2c3e80a7e1">
+                        <img style="display: block;" src="./img//shang-pic.png" width="25" height="25"
+                            alt="赏析">
+                        <img style="display: block;" src="./img//zhu-pic.png" width="25" height="25"
+                            alt="注释">
+                        <img style="display: block;" src="./img//yi-pic.png" width="25" height="25"
+                            alt="译文">
+
+                    </div>
+                    <p><a style="font-size:18px; line-height:22px; height:22px;"
+                            href="#" target="_blank"><b>旱麓</b></a>
+                    </p>
+                    <p class="source"><a href="#"
+                            target="_blank">佚名</a><a
+                            href="#">〔先秦〕</a></p>
+                    <div class="contson" id="contsonfa2c3e80a7e1">
+                        <p>瞻彼旱麓，榛楛济济。岂弟君子，干禄岂弟。</p>
+                        <p>瑟彼玉瓒，黄流在中。岂弟君子，福禄攸降。</p>
+                        <p>鸢飞戾天，鱼跃于渊。岂弟君子，遐不作人？</p>
+                        <p>清酒既载，骍牡既备。以享以祀，以介景福。</p>
+                        <p>瑟彼柞棫，民所燎矣。岂弟君子，神所劳矣。</p>
+                        <p>莫莫葛藟，施于条枚。岂弟君子，求福不回。</p>
+                    </div>
+                </div>
+                <div class="tool">
+                    <div class="shoucang"><img id="likeImg236" name="1"
+                            src="./img/shou-cang.png" alt="收藏" width="19" height="19"></div>
+                    <div class="toolpinglun"><a href="#"><img
+                                src="./img/down-load.png" alt="下载" width="19" height="19"></a></div>
+                    <div class="toolpinglun"><a
+                            href="#"><img
+                                src="./img/co-py.png" alt="复制" width="19" height="19"></a></div>
+
+                    <div class="toolpinglun"><a href="#"
+                            target="_blank"><img src="./img/tool-more.png" alt="详情" width="19"
+                                height="19"></a></div>
+                    <div class="jiucuo"><a
+                            href="#"
+                            target="_blank">完善</a></div>
+                </div>
+                <div id="toolPlay236" style=" display:none;clear:both;"></div>
+            </div>
+            <div style=" width:1px; height:1px; overflow:hidden;">
+                <!-- <textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1"
+                    id="txtare65130">]</textarea -->
+            </div>
+            <div class="sons">
+                <div class="cont">
+                    <div class="yizhu">
+                        <img src="./img/bei-pic.png" width="25" height="25" alt="背诵" id="btnBeisongfa2c3e80a7e1">
+                        <img style="display: block;" src="./img//shang-pic.png" width="25" height="25"
+                            alt="赏析">
+                        <img style="display: block;" src="./img//zhu-pic.png" width="25" height="25"
+                            alt="注释">
+                        <img style="display: block;" src="./img//yi-pic.png" width="25" height="25"
+                            alt="译文">
+
+                    </div>
+                    <p><a style="font-size:18px; line-height:22px; height:22px;"
+                            href="#"
+                            target="_blank"><b>点绛唇·病起恹恹</b></a></p>
+                    <p class="source"><a href="#"
+                            target="_blank">韩琦</a><a
+                            href="#">〔宋代〕</a></p>
+                    <div class="contson" id="contson657b12ba2b38">
+                        病起恹恹、画堂花谢添憔悴。乱红飘砌。滴尽胭脂泪。<br>惆怅前春，谁向花前醉。愁无际。武陵回睇。人远波空翠。
+                    </div>
+                </div>
+                <div class="tool">
+                    <div class="shoucang"><img id="likeImg236" name="1"
+                            src="./img/shou-cang.png" alt="收藏" width="19" height="19"></div>
+                    <div class="toolpinglun"><a href="#"><img
+                                src="./img/down-load.png" alt="下载" width="19" height="19"></a></div>
+                    <div class="toolpinglun"><a
+                            href="#"><img
+                                src="./img/co-py.png" alt="复制" width="19" height="19"></a></div>
+
+                    <div class="toolpinglun"><a href="#"
+                            target="_blank"><img src="./img/tool-more.png" alt="详情" width="19"
+                                height="19"></a></div>
+                    <div class="jiucuo"><a
+                            href="#"
+                            target="_blank">完善</a></div>
+                </div>
+
+                <div id="toolPlay65130" style=" display:none;clear:both;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./js/user.js"></script>
+<!-- <script type="text/javascript">
+	var flag1=false;
+	$(document).ready(function(){
+			// alert(window.localStorage.getItem("flag1"));
+			$("#show").html(window.localStorage.getItem("user"));//获取到存储在浏览器上名称为user的数据
+			if(window.localStorage.getItem("flag1")!=null)
+			flag1=window.localStorage.getItem("flag1");
+			if(flag1){
+				$(".operation_container").children("a").hide();
+				$(".operation_container").append("<span id='getout'>您好："+window.localStorage.getItem("user")+
+				"&nbsp;&nbsp;&nbsp;<a href='#'>退出登录</a></span>");
+			}
+			flag1=false;
+			$("#getout").click(function(){
+				window.localStorage.removeItem("flag1");//移除存储在浏览器上名称为flag1的数据
+				$(".operation_container").children("a").show();
+				$(this).hide();
+			});
+	});
+</script> -->
+<script>
+    // 下拉事件，改变宽度
+    function clickType() {
+    if (document.getElementById("type1").style.height == "auto") {
+        document.getElementById("imgType1").src = "./img/jianTop.png";
+        document.getElementById("type1").style.height = "26px";
+
+    }
+    else {
+        document.getElementById("imgType1").src = "./img/jianBtn.png";
+        document.getElementById("type1").style.height = "auto";
+    }
+    }
+
+    function clickType2() {
+        if (document.getElementById("type2").style.height == "auto") {
+            document.getElementById("imgType2").src = "./img/jianTop.png";
+            document.getElementById("type2").style.height = "26px";
+        }
+        else {
+            document.getElementById("imgType2").src = "./img/jianBtn.png";
+            document.getElementById("type2").style.height = "auto";
+        }
+    }
+</script>
+</html>

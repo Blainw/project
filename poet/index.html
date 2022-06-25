@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"  />		
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<style type="text/css">
+		*{
+			text-decoration: none;
+		}
+		.swiper-slide {
+			position: relative;
+			width: 100%;
+			height: 460px;
+		}
+		.swiper-lazy {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			animation: fader 20s linear infinite;
+			animation-play-state: running;
+		}
+		.swiper-lazy:not(:nth-of-type(1)) {
+			opacity: 0;
+		}
+		.swiper-lazy:nth-of-type(1) {
+			animation-delay: -1s;
+		}
+		.swiper-lazy:nth-of-type(2) {
+			animation-delay: 3s;
+		}
+		.swiper-lazy:nth-of-type(3) {
+			animation-delay: 7s;
+		}
+		.swiper-lazy:nth-of-type(4) {
+			animation-delay: 11s;
+		}
+		.swiper-lazy:nth-of-type(5) {
+			animation-delay: 15s;
+		}
+		.swiper-slide:hover img {
+			animation-play-state: paused;
+		}
+		/**
+		 * 	1. 淡入效果 0% ~ 2%
+		 * 	2. 停留效果 2% ~ 20%
+		 * 	3. 淡出效果 20% ~ 22%
+		 * 	淡入层级高于淡出层级
+		 */
+		@keyframes fader {
+			0% {
+				opacity: 0;
+				z-index: 2;
+			}
+			2% {
+				opacity: 1;
+				z-index: 1;
+			}
+			20% {
+				opacity: 1;
+				z-index: 1;
+			}
+			22% {
+				opacity: 0;
+				z-index: 0;
+			}
+			100% {
+				opacity: 0;
+				z-index: 0;
+			}
+		}
+		/* 表单部分样式 */
+		form{
+			margin-left: 20px;
+		}
+		#search{
+			height: 30px;
+    		outline-color: burlywood;
+    		border-radius: 5px;
+    		border: none;
+    		background-color: #F2E8DA;
+   			color: black;
+		}
+		#search:focus{
+			color: white;
+			background-color: rgba(163, 134, 96, 0.4);
+		}
+		#btn_search{
+			width: 45px;
+			height: 30px;
+			border: none;
+			border-radius: 8px;
+		}
+		#btn_search:active{
+    		background-color: #F2E8DA;
+		}
+	</style>
+</head>
+<body>
+	<div style="z-index: 20;">
+		<nav>
+			<p class="logo"><a href="./index.html">古诗文</a></p>
+			<ul>
+				<li><a href="./index.html">首页</a></li>
+				<li><a href="./verse.html">诗文</a></li>
+				<li><a href="./famous.html">名句</a></li>
+				<li><a href="./auther.html">作者</a></li>
+				<li><a href="shopping.html">购物车</a></li>
+				<li class="item" ><!-- onmouseover="onOver(this)" onmouseout="onOut(this)" -->
+					<span id="showMore">更多<i class="iconfont icon-xiala"></i></span>
+					<ul class="companyIntroduceUrl">
+		                <li>古籍</li>
+		                <li>藏头诗</li>
+		                <li>词牌名</li>
+		                <li>诗句</li>
+	                </ul>
+				</li>
+			</ul>
+			<form>
+				<input type="text" id="search"/>
+				<input type="submit" id="btn_search" value="搜索">
+			</form>
+			<p class="operation_container">
+				<a href="./login.html">登录</a>
+				<a href="./register.html">注册</a>
+			</p>
+		</nav>
+	</div>
+	<div class="swiper-slide" style="z-index: -1;">
+		<img src="" alt="" class="swiper-lazy">
+		<img src="" alt="" class="swiper-lazy">
+		<img src="" alt="" class="swiper-lazy">
+		<img src="" alt="" class="swiper-lazy">
+		<img src="" alt="" class="swiper-lazy">
+	</div>
+	<div class="content">
+		<p id="show" style="display: none;"></p>
+		<h1>热推诗词</h1>
+		<div class="maincontent">
+			<img src="img/1.jpg">
+			<h3>将进酒·君不见黄河之水天上来</h3>
+			<h4>[唐] 李白</h4>
+			<p>君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。</p>
+			<p>人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。</p>
+			<p>烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。</p>
+			<p>与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。</p>
+			<p>古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。</p>
+			<p>主人何为言少钱，径须沽取对君酌。五花马，千金裘，</p>
+			<p>呼儿将出换美酒，与尔同销万古愁。</p>
+		</div>
+		<div class="leftdown">
+			<img src="img/改.jpg">
+			<h3>江城子·乙卯正月二十日夜记梦</h3>
+			<h4>[宋] 苏轼</h4>
+			<p>十年生死两茫茫，不思量，自难忘。</p>
+			<p>千里孤坟，无处话凄凉。</p>
+			<p>纵使相逢应不识，尘满面，鬓如霜。</p>
+			<p>夜来幽梦忽还乡，小轩窗，正梳妆。</p>
+			<p>相顾无言，惟有泪千行。</p>
+			<p>料得年年肠断处，明月夜，短松冈。</p>
+		</div>
+		<div class="rightdown">
+			<img src="img/3.png">
+			<h3>水调歌头·明月几时有</h3>
+			<h4>[宋] 苏轼</h4>
+			<p>明月几时有，把酒问青天。</p>
+			<p>不知天上宫阙，今夕是何年？</p>
+			<p>我欲乘风归去，又恐琼楼玉宇，</p>
+			<p>高处不胜寒。</p>
+			<p>起舞弄清影，何似在人间！</p>
+			<p>转朱阁，低绮户，照无眠。</p>
+			<p>不应有恨，何事长向别时圆？</p>
+			<p>人有悲欢离合，月有阴晴圆缺，</p>
+			<p>此事古难全。</p>
+			<p>但愿人长久，千里共婵娟。</p>
+		</div>
+	</div>
+	
+	
+	
+	<footer>
+			<div class="gcs-footer">
+			
+			  <div class="footer-top">
+			
+			    <a href="book.html">图书简介</a> |
+			
+			    <a href="#">古诗词学习网</a> |
+			
+			    <a href="#">诗歌朗诵</a> |
+			
+			    <a href="vediotc.html">视频教程</a> |
+			
+			    <a href="#">文学知识</a> |
+			
+			    <a href="#">赞美诗词</a>
+			  </div>
+			   <p>
+			     ©Copyright 2021 qianqian-Cheng版权所有 | 武汉纺织大学
+			   </p>
+			</div>
+			
+		</footer>
+</body>
+<script type="text/javascript" src="./js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+		$(".content h3:eq(0)").click(function(){
+			var newWeb=window.open('_blank');
+			newWeb.location="https://baike.baidu.com/item/%E5%B0%86%E8%BF%9B%E9%85%92/5312?fr=aladdin";
+		});
+		$(".content h3:eq(1)").click(function(){
+			var newWeb=window.open('_blank');
+			newWeb.location="https://hanyu.baidu.com/shici/detail?pid=f4241cc7a83d4843afc44fa8d17261cd&from=kg0";
+		});
+		$(".content h3:eq(2)").click(function(){
+			var newWeb=window.open('_blank');
+			newWeb.location="https://hanyu.baidu.com/shici/detail?pid=946d8372884d445eb0a4cc6e3826dbe8&from=kg0";
+		})
+	</script>
+<script type="text/javascript">
+	var flag1=false;
+	$(document).ready(function(){
+			// alert(window.localStorage.getItem("flag1"));
+			$("#show").html(window.localStorage.getItem("user"));//获取到存储在浏览器上名称为user的数据
+			if(window.localStorage.getItem("flag1")!=null)
+			flag1=window.localStorage.getItem("flag1");
+			if(flag1){
+				$(".operation_container").children("a").hide();
+				$(".operation_container").append("<span id='getout'>您好："+window.localStorage.getItem("user")+
+				"&nbsp;&nbsp;&nbsp;<a href='#'>退出登录</a></span>");
+			}
+			flag1=false;
+			$("#getout").click(function(){
+				window.localStorage.removeItem("flag1");//移除存储在浏览器上名称为flag1的数据
+				$(".operation_container").children("a").show();
+				$(this).hide();
+			});
+	});
+</script>
+<!-- <script type="text/javascript">
+		function onOver(hobj){
+            var sub_url=obj.getElementsByTagName("ul")
+            sub_url[0].style.display="block";
+        }
+        function onOut(obj){
+            var sub_url=obj.getElementsByTagName("ul")            
+            sub_url[0].style.display="none";
+        }
+</script> -->
+<script type="text/javascript">
+	$(".item").mouseover(function(){
+		$(".companyIntroduceUrl").show();
+	});
+	$(".item").mouseout(function(){
+		$(".companyIntroduceUrl").hide();
+	});
+</script>
+<script type="text/javascript">
+
+		var imgUrl = [
+			// display: block; width: 1226px; height: 460px;			
+			'https://www.asqql.com/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_20144242338080.jpg',	
+			'https://www.asqql.com/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_20144242337530.jpg',
+			'https://www.asqql.com/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_20144242334430.jpg',
+			'https://www.asqql.com/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_20144242336510.jpg',
+			'https://www.asqql.com/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_20144242326040.jpg',
+			'https://www.asqql.com/upfile/2009pasdfasdfic2009s305985-ts/2014-4/www.asqql.com_20144242321400.jpg',
+		];
+
+		var imgs = document.querySelectorAll('.swiper-lazy');
+
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].src = imgUrl[i];
+		}
+	</script>
+</html>

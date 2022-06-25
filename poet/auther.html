@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>诗句</title>
+	<script type="text/javascript">
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+		        window.location.href = "https://m.gushiwen.cn/authors/Default.aspx?p=1&c=%e4%b8%8d%e9%99%90";
+		    } else {
+		
+		    }
+		</script>
+		
+		<link href="/css/skinSo20210402.css" rel="stylesheet" type="text/css" />
+	
+	 <script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	    //取得cookie值
+	    function getCookie(name) {
+	        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+	
+	        if (arr = document.cookie.match(reg))
+	
+	            return unescape(arr[2]);
+	        else
+	            return null;
+	    }
+	
+	    //判断收藏
+	    function selectLike(id) {
+	        document.getElementById('likeImg' + id).name = parseInt(document.getElementById('likeImg' + id).name) + 1;
+	        if (document.getElementById('likeImg' + id).name == '1') {
+	            var idsShigeLaiyo = getCookie('idsShiwen2017');
+	            if (idsShigeLaiyo != null && idsShigeLaiyo != '') {
+	                var ids = idsShigeLaiyo.split(',');
+	                for (var i = 0; i < ids.length; i++) {
+	                    if (ids[i] == id) {
+	                        document.getElementById('likeImg' + id).src = 'https://song.gushiwen.cn/siteimg/shou-cangok.png';
+	                        document.getElementById('likeImg' + id).alt = '已收藏';
+	                        break;
+	                    }
+	                }
+	            }
+	        }
+	    }
+	
+	    //判断收藏名句
+	    function selectLikeMingju(id) {
+	        document.getElementById('likeImg' + id).name = parseInt(document.getElementById('likeImg' + id).name) + 1;
+	        if (document.getElementById('likeImg' + id).name == '1') {
+	            var idsShigeLaiyo = getCookie('idsMingju2017');
+	            if (idsShigeLaiyo != null && idsShigeLaiyo != '') {
+	                var ids = idsShigeLaiyo.split(',');
+	                for (var i = 0; i < ids.length; i++) {
+	                    if (ids[i] == id) {
+	                        document.getElementById('likeImg' + id).src = 'https://song.gushiwen.cn/siteimg/shou-cangok.png';
+	                        document.getElementById('likeImg' + id).alt = '已收藏';
+	                        break;
+	                    }
+	                }
+	            }
+	        }
+	    }
+	
+	    //判断收藏作者
+	    function selectLikeAuthor(id) {
+	        document.getElementById('likeImg' + id).name = parseInt(document.getElementById('likeImg' + id).name) + 1;
+	        if (document.getElementById('likeImg' + id).name == '1') {
+	            var idsShigeLaiyo = getCookie('idsAuthor2017');
+	            if (idsShigeLaiyo != null && idsShigeLaiyo != '') {
+	                var ids = idsShigeLaiyo.split(',');
+	                for (var i = 0; i < ids.length; i++) {
+	                    if (ids[i] == id) {
+	                        document.getElementById('likeImg' + id).src = 'https://song.gushiwen.cn/siteimg/shou-cangok.png';
+	                        document.getElementById('likeImg' + id).alt = '已收藏';
+	                        break;
+	                    }
+	                }
+	            }
+	        }
+	    }
+	
+	    //判断收藏古籍
+	    function selectLikeGuwen(id) {
+	        document.getElementById('likeImg' + id).name = parseInt(document.getElementById('likeImg' + id).name) + 1;
+	        if (document.getElementById('likeImg' + id).name == '1') {
+	            var idsShigeLaiyo = getCookie('idsGuji2017');
+	            if (idsShigeLaiyo != null && idsShigeLaiyo != '') {
+	                var ids = idsShigeLaiyo.split(',');
+	                for (var i = 0; i < ids.length; i++) {
+	                    if (ids[i] == id) {
+	                        document.getElementById('likeImg' + id).src = 'https://song.gushiwen.cn/siteimg/shou-cangok.png';
+	                        document.getElementById('likeImg' + id).alt = '已收藏';
+	                        break;
+	                    }
+	                }
+	            }
+	        }
+	    }
+	    </script>
+	
+	    <script>
+	        var _hmt = _hmt || [];
+	        (function () {
+	            var hm = document.createElement("script");
+	            hm.src = "//hm.baidu.com/hm.js?9007fab6814e892d3020a64454da5a55";
+	            var s = document.getElementsByTagName("script")[0];
+	            s.parentNode.insertBefore(hm, s);
+	        })();
+	</script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            height: 60px;
+            line-height: 30px;
+            background: burlywood;
+            padding: 0 40px
+        }
+
+        nav .logo {
+            flex: 1;
+            width: 120px;
+            height: 55px;
+            font-family: Fantasy;
+            font-size: 30px;
+            color: #fff;
+            margin-top: 15px;
+        }
+
+        nav ul {
+            flex: 3;
+            display: flex;
+            justify-content: space-around;
+            color: #fff;
+        }
+
+        nav ul>li {
+            list-style: none;
+            width: 120px;
+            height: 59px;
+            line-height: 59px;
+            text-align: center;
+            cursor: pointer;
+            /* margin-top: -15px; */
+        }
+
+        nav ul>li .companyIntroduceUrl {
+            line-height: normal;
+            width: 120px;
+            background-color: rgba(0, 0, 0, .7);
+            padding: 15px 0;
+            display: none;
+        }
+
+        nav .companyIntroduceUrl>li {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        nav .companyIntroduceUrl>li:hover {
+            background-color: grey;
+            cursor: pointer;
+        }
+
+        i {
+            margin-left: 5px;
+        }
+
+        .operation_container {
+            flex: 2;
+            text-align: right;
+        }
+
+        .operation_container a {
+            /*color: #0da2fb;*/
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 20px;
+            padding: 5px 20px;
+            line-height: 60px;
+        }
+
+        /* 增加鼠标悬浮效果 */
+        nav ul>li:hover,
+        .operation_container a:hover {
+            background-color: rgba(163, 134, 96, 0.4);
+        }
+
+        /* 搜索框部分样式 */
+        form {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        #search {
+            height: 30px;
+            outline-color: burlywood;
+            border-radius: 5px;
+            border: none;
+            background-color: #F2E8DA;
+            color: black;
+        }
+
+        #search:focus {
+            color: white;
+            background-color: rgba(163, 134, 96, 0.4);
+        }
+
+        #btn_search {
+            width: 45px;
+            height: 30px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        #btn_search:active {
+            background-color: #F2E8DA;
+        }
+
+        /* 导航栏链接 */
+        nav ul li>a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .content .titletype {
+            height: auto;
+            margin-top: 20px;
+            clear: both;
+            background-color: #F0EFE2;
+            overflow: hidden;
+            border: 1px solid #d7d5bc;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        .content .titletype .son1 {
+            clear: both;
+            height: 40px;
+            line-height: 40px;
+            margin-top: 5px;
+            font-size: 10px;
+            border-bottom: 1px solid #DAD9D1;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .content .titletype .sleft span{
+            float: left;
+            margin-top: 14px;
+            font-size: 14px;
+        }
+
+        .content .titletype .son2 {
+            width: 96%;
+            /* height: 26px; */
+            margin-left: 20px;
+            clear: both;
+            border-bottom: 1px dashed #DAD9D1;
+            overflow: hidden;
+            padding-bottom: 10px;
+        }
+
+        .titletype .son2 .sleft {
+            width: 50px;
+            float: left;
+            color: #275F38;
+        }
+
+        .titletype .son2 .sright {
+            width: 90%;
+            float: left;
+        }
+
+        .titletype .son2 .sright a {
+            float: left;
+            margin-top: 14px;
+            width: 50px;
+            font-size: 14px;
+        }
+
+        /* 下拉箭头 */
+        .titletype .son2 .sright2 {
+            width: 15px;
+            float: right;
+            margin-top: 14px;
+        }
+		
+		.div#leftZhankai{
+			padding: 0px;
+			margin-top: 0px;
+			margin-right: 0px;
+			margin-bottom: 0px;
+			margin-left: 0px;
+			color: #0F0F0F;
+		}
+		
+		.content .sonspic{
+			    height: auto;
+			    clear: both;
+			    background-color: #F0EFE2;
+			    overflow: hidden;
+			    margin-top: 20px;
+			    border: 1px solid #d7d5bc;
+			    -moz-border-radius: 5px;
+			    -webkit-border-radius: 5px;
+			    border-radius: 5px;
+			
+		}
+		
+		.content .sonspic .cont{
+			
+			height: auto;
+			clear: both;
+			margin-top: 15px;
+			font-size: 14px;
+			margin-left: 20px;
+			margin-right: 20px;
+			line-height: 200%;
+			overflow: hidden;
+		}   
+		.content .sonspic .cont .divimg{
+			float: left;
+			width: 105px;
+			height: 150px;
+			margin-right: 20px;
+		}
+		.content .sonspic .cont p{
+			font-size: 14px;
+			    margin-bottom: 10px;
+			    line-height: 200%;
+		}
+		.content .sonspic .tool {
+			height: 32px;
+			clear: both;
+			margin-top: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-bottom: 3px;
+		}
+		
+		.content .sonspic .tool img{
+			float: left;
+		}
+		
+		.jiucuo a{
+			float: right;
+		}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p class="logo">古诗文</p>
+            <ul>
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./verse.html">诗文</a></li>
+                <li><a href="./famous.html">名句</a></li>
+                <li><a href="./auther.html">作者</a></li>
+                <li><a href="shopping.html">购物车</a></li>
+                <li class="item" onmouseover="onOver(this)" onmouseout="onOut(this)">
+                    <span id="showMore">更多<i class="iconfont icon-xiala"></i></span>
+                    <ul class="companyIntroduceUrl">
+                        <li>古籍</li>
+                        <li>藏头诗</li>
+                        <li>词牌名</li>
+                        <li>诗句</li>
+                    </ul>
+                </li>
+            </ul>
+            <form>
+                <input type="text" id="search" />
+                <input type="submit" id="btn_search" value="搜索">
+            </form>
+            <p class="operation_container">
+                <a href="./login.html">登录</a>
+                <a href="./register.html">注册</a>
+            </p>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="titletype">
+            <div class="son1">
+                <h1>不限</h1>
+            </div>
+            <div id="type3" class="son2" style=" height:26px;">
+                <div class="sleft">
+                    <span>朝代：</span>
+                </div>
+                <div class="sright">
+
+                    <a href="#">先秦</a>
+
+                    <a href="#">两汉</a>
+
+                    <a href="#">魏晋</a>
+
+                    <a href="#">南北朝</a>
+
+                    <a href="#">隋代</a>
+
+                    <a href="#">唐代</a>
+
+                    <a href="#">五代</a>
+
+                    <a href="#">宋代</a>
+
+                    <a href="#">金朝</a>
+
+                    <a href="#">元代</a>
+
+                    <a href="#">明代</a>
+
+                    <a href="#">清代</a>
+
+                </div>
+            </div>
+        </div>
+		<div id="leftZhankai" style=" display:block;">
+		         
+		                <div style=" width:1px; height:1px; overflow:hidden;">
+		            <textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtareAuthor247">李白（701年－762年） ，字太白，号青莲居士，又号“谪仙人”，唐代伟大的浪漫主义诗人，被后人誉为“诗仙”，与杜甫并称为“李杜”，为了与另两位诗人李商隐与杜牧即“小李杜”区别，杜甫与李白又合称“大李杜”。据《新唐书》记载，李白为兴圣皇帝（凉武昭王李暠）九世孙，与李唐诸王同宗。其人爽朗大方，爱饮酒作诗，喜交友。李白深受黄老列庄思想影响，有《李太白集》传世，诗作中多以醉时写的，代表作有《望庐山瀑布》《行路难》《蜀道难》《将进酒》《明堂赋》《早发白帝城》等多首。https://so.gushiwen.cn/authorv_b90660e3e492.aspx</textarea>
+		            </div>
+		                <div class="sonspic">
+		                <div class="cont" style="margin-top:13px;">
+		                      
+		                      <div class="divimg" style="margin-top:2px;">
+		                      <a href="#" target="_blank"><img src="img/libai.jpg" width="105" height="150" alt="李白"/></a>
+		                      </div>
+		                      
+		                    <p style="height:22px;">
+		                    <a target="_blank" style="font-size:18px; line-height:22px; height:22px;" href="/authorv_b90660e3e492.aspx"><b>李白</b></a>
+		                    <a style="margin-left:5px;" href="javascript:PlayAuthor(247,'http://so.gushiwen.cn/authors/default.aspx')"><img id="speakerimgAuthor247" src="https://song.gushiwen.cn/siteimg/speak-er.png" / alt="" width="16" height="16"/></a>
+		                    <span id="authorPlay247" style=" display:none;width:1px; height:1px;"></span>
+		                    </p>
+		                    <p style=" margin:0px;">李白（701年－762年） ，字太白，号青莲居士，又号“谪仙人”，唐代伟大的浪漫主义诗人，被后人誉为“诗仙”，与杜甫并称为“李杜”，为了与另两位诗人李商隐与杜牧即“小李杜”区别，杜甫与李白又合称“大李杜”。据《新唐书》记载，李白为兴圣皇帝（凉武昭王李暠）九世孙，与李唐诸王同宗。其人爽朗大方，爱饮酒作诗，喜交友。李白深受黄老列庄思想影响，有《李太白集》传世，诗作中多以醉时写的，代表作有《望庐山瀑布》《行路难》《蜀道难》《将进酒》《明堂赋》《早发白帝城》等多首。<a target="_blank" href="/shiwens/default.aspx?astr=%e6%9d%8e%e7%99%bd">► 1184篇诗文</a>　<a target="_blank" href="/mingjus/default.aspx?astr=%e6%9d%8e%e7%99%bd">► 5528条名句</a></p>
+		                </div>
+		                <div class="tool">
+		                    <div class="shoucang"><img id="likeImg247" name="0" onload="selectLikeAuthor(247)" onclick="changeLikeAuthor(247,'29E0D4EB43C036D3','http://so.gushiwen.cn/authors/default.aspx')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19" /></div>
+		                    <div class="toolpinglun"><a href="#"><img src="img/down-load.png" alt="下载" width="19" height="19" /></a></div>
+		                    <div class="toolpinglun"><a href="#"><img src="img/co-py.png" alt="复制" width="19" height="19" /></a></div>
+		                    <div class="toolpinglun" ><a href="#" target="_blank"><img src="img/tool-more.png" alt="详情" width="19" height="19" /></a></div>
+		                    <div class="jiucuo"><a href="#" target="_blank">完善</a></div>
+		                    </div>
+		            </div>
+		             
+		                <div style=" width:1px; height:1px; overflow:hidden;">
+		            <textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtareAuthor183">（1037年1月8日-1101年8月24日）字子瞻、和仲，号铁冠道人、东坡居士，世称苏东坡、苏仙，汉族，眉州眉山（四川省眉山市）人，祖籍河北栾城，北宋著名文学家、书法家、画家，历史治水名人。苏轼是北宋中期文坛领袖，在诗、词、散文、书、画等方面取得很高成就。文纵横恣肆；诗题材广阔，清新豪健，善用夸张比喻，独具风格，与黄庭坚并称“苏黄”；词开豪放一派，与辛弃疾同是豪放派代表，并称“苏辛”；散文著述宏富，豪放自如，与欧阳修并称“欧苏”，为“唐宋八大家”之一。苏轼善书，“宋四家”之一；擅长文人画，尤擅墨竹、怪石、枯木等。作品有《东坡七集》《东坡易传》《东坡乐府》《潇湘竹石图卷》《古木怪石图卷》等。https://so.gushiwen.cn/authorv_3b99a16ff2dd.aspx</textarea>
+		            </div>
+		                <div class="sonspic">
+		                <div class="cont" style="margin-top:13px;">
+		                      
+		                      <div class="divimg" style="margin-top:2px;">
+		                      <a href="#" target="_blank"><img src="https://song.gushiwen.cn/authorImg/sushi.jpg" width="105" height="150" alt="苏轼"/></a>
+		                      </div>
+		                      
+		                    <p style="height:22px;">
+		                    <a target="_blank" style="font-size:18px; line-height:22px; height:22px;" href="/authorv_3b99a16ff2dd.aspx"><b>苏轼</b></a>
+		                    <a style="margin-left:5px;" href="javascript:PlayAuthor(183,'http://so.gushiwen.cn/authors/default.aspx')"><img id="speakerimgAuthor183" src="https://song.gushiwen.cn/siteimg/speak-er.png" / alt="" width="16" height="16"/></a>
+		                    <span id="authorPlay183" style=" display:none;width:1px; height:1px;"></span>
+		                    </p>
+		                    <p style=" margin:0px;">（1037年1月8日-1101年8月24日）字子瞻、和仲，号铁冠道人、东坡居士，世称苏东坡、苏仙，汉族，眉州眉山（四川省眉山市）人，祖籍河北栾城，北宋著名文学家、书法家、画家，历史治水名人。苏轼是北宋中期文坛领袖，在诗、词、散文、书、画等方面取得很高成就。文纵横恣肆；诗题材广阔，清新豪健，善用夸张比喻，独具风格，与黄庭坚并称“苏黄”；词开豪放一派，与辛弃疾同是豪放派代表，并称“苏辛”；散文著述宏富，豪放自如，与欧阳修并称“欧苏”，为“唐宋八大家”之一。苏轼善书，“宋四家”之一；擅长文人画，尤擅墨竹、怪石、枯木等。作品有《东坡七集》《东坡易传》《东坡乐府》《潇湘竹石图卷》《古木怪石图卷》等。<a target="_blank" href="/shiwens/default.aspx?astr=%e8%8b%8f%e8%bd%bc">► 3368篇诗文</a>　<a target="_blank" href="/mingjus/default.aspx?astr=%e8%8b%8f%e8%bd%bc">► 3449条名句</a></p>
+		                </div>
+		                <div class="tool">
+		                    <div class="shoucang"><img id="likeImg183" name="0" onload="selectLikeAuthor(183)" onclick="changeLikeAuthor(183,'EAC91225AFFABAE2','http://so.gushiwen.cn/authors/default.aspx')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19" /></div>
+		                    <div class="toolpinglun"><a href="#"><img src="img/down-load.png" alt="下载" width="19" height="19" /></a></div>
+		                    <div class="toolpinglun"><a href="#"><img src="img/co-py.png" alt="复制" width="19" height="19" /></a></div>
+		                    <div class="toolpinglun" ><a href="#"><img src="img/tool-more.png" alt="详情" width="19" height="19" /></a></div>
+		                    <div class="jiucuo"><a href="#" target="_blank">完善</a></div>
+		                    </div>
+		            </div>
+		             
+		                <div style=" width:1px; height:1px; overflow:hidden;">
+		            <textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtareAuthor665">白居易（772年－846年），字乐天，号香山居士，又号醉吟先生，祖籍太原，到其曾祖父时迁居下邽，生于河南新郑。是唐代伟大的现实主义诗人，唐代三大诗人之一。白居易与元稹共同倡导新乐府运动，世称“元白”，与刘禹锡并称“刘白”。白居易的诗歌题材广泛，形式多样，语言平易通俗，有“诗魔”和“诗王”之称。官至翰林学士、左赞善大夫。公元846年，白居易在洛阳逝世，葬于香山。有《白氏长庆集》传世，代表诗作有《长恨歌》、《卖炭翁》、《琵琶行》等。https://so.gushiwen.cn/authorv_85097dd0c645.aspx</textarea>
+		            </div>
+		                <div class="sonspic">
+		                <div class="cont" style="margin-top:13px;">
+		                      
+		                      <div class="divimg" style="margin-top:2px;">
+		                      <a href="#"><img src="https://song.gushiwen.cn/authorImg/baijuyi.jpg" width="105" height="150" alt="白居易"/></a>
+		                      </div>
+		                      
+		                    <p style="height:22px;">
+		                    <a target="_blank" style="font-size:18px; line-height:22px; height:22px;" href="/authorv_85097dd0c645.aspx"><b>白居易</b></a>
+		                    <a style="margin-left:5px;" href="#"><img id="speakerimgAuthor665" src="https://song.gushiwen.cn/siteimg/speak-er.png" / alt="" width="16" height="16"/></a>
+		                    <span id="authorPlay665" style=" display:none;width:1px; height:1px;"></span>
+		                    </p>
+		                    <p style=" margin:0px;">白居易（772年－846年），字乐天，号香山居士，又号醉吟先生，祖籍太原，到其曾祖父时迁居下邽，生于河南新郑。是唐代伟大的现实主义诗人，唐代三大诗人之一。白居易与元稹共同倡导新乐府运动，世称“元白”，与刘禹锡并称“刘白”。白居易的诗歌题材广泛，形式多样，语言平易通俗，有“诗魔”和“诗王”之称。官至翰林学士、左赞善大夫。公元846年，白居易在洛阳逝世，葬于香山。有《白氏长庆集》传世，代表诗作有《长恨歌》、《卖炭翁》、《琵琶行》等。<a target="_blank" href="/shiwens/default.aspx?astr=%e7%99%bd%e5%b1%85%e6%98%93">► 3084篇诗文</a>　<a target="_blank" href="/mingjus/default.aspx?astr=%e7%99%bd%e5%b1%85%e6%98%93">► 1366条名句</a></p>
+		                </div>
+		                <div class="tool">
+		                    <div class="shoucang"><img id="likeImg665" name="0" onload="selectLikeAuthor(665)" onclick="changeLikeAuthor(665,'0944B6BB2E12D115','http://so.gushiwen.cn/authors/default.aspx')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19" /></div>
+		                    <div class="toolpinglun"><a href="#"><img src="img/down-load.png" alt="下载" width="19" height="19" /></a></div>
+		                    <div class="toolpinglun"><a href="#"><img src="img/co-py.png" alt="复制" width="19" height="19" /></a></div>
+		                    <div class="toolpinglun" ><a href="#"><img src="img/tool-more.png" alt="详情" width="19" height="19" /></a></div>
+		                    <div class="jiucuo"><a href="#">完善</a></div>
+		                    </div>
+		            </div>
+		             
+		                <div style=" width:1px; height:1px; overflow:hidden;">
+		            <textarea style=" background-color:#F0EFE2; border:0px;overflow:hidden;" cols="1" rows="1" id="txtareAuthor474">杜甫（712－770），字子美，自号少陵野老，世称“杜工部”、“杜少陵”等，汉族，河南府巩县（今河南省巩义市）人，唐代伟大的现实主义诗人，杜甫被世人尊为“诗圣”，其诗被称为“诗史”。杜甫与李白合称“李杜”，为了跟另外两位诗人李商隐与杜牧即“小李杜”区别开来，杜甫与李白又合称“大李杜”。他忧国忧民，人格高尚，他的约1400余首诗被保留了下来，诗艺精湛，在中国古典诗歌中备受推崇，影响深远。759-766年间曾居成都，后世有杜甫草堂纪念。https://so.gushiwen.cn/authorv_515ea88d1858.aspx</textarea>
+		            </div>
+		                <div class="sonspic">
+		                <div class="cont" style="margin-top:13px;">
+		                      
+		                      <div class="divimg" style="margin-top:2px;">
+		                      <a href="/authorv_515ea88d1858.aspx" target="_blank"><img src="https://song.gushiwen.cn/authorImg/dufu.jpg" width="105" height="150" alt="杜甫"/></a>
+		                      </div>
+		                      
+		                    <p style="height:22px;">
+		                    <a target="_blank" style="font-size:18px; line-height:22px; height:22px;" href="#"><b>杜甫</b></a>
+		                    <a style="margin-left:5px;" href="#"><img id="speakerimgAuthor474" src="https://song.gushiwen.cn/siteimg/speak-er.png" / alt="" width="16" height="16"/></a>
+		                    <span id="authorPlay474" style=" display:none;width:1px; height:1px;"></span>
+		                    </p>
+		                    <p style=" margin:0px;">杜甫（712－770），字子美，自号少陵野老，世称“杜工部”、“杜少陵”等，汉族，河南府巩县（今河南省巩义市）人，唐代伟大的现实主义诗人，杜甫被世人尊为“诗圣”，其诗被称为“诗史”。杜甫与李白合称“李杜”，为了跟另外两位诗人李商隐与杜牧即“小李杜”区别开来，杜甫与李白又合称“大李杜”。他忧国忧民，人格高尚，他的约1400余首诗被保留了下来，诗艺精湛，在中国古典诗歌中备受推崇，影响深远。759-766年间曾居成都，后世有杜甫草堂纪念。<a target="_blank" href="/shiwens/default.aspx?astr=%e6%9d%9c%e7%94%ab">► 1381篇诗文</a>　<a target="_blank" href="/mingjus/default.aspx?astr=%e6%9d%9c%e7%94%ab">► 2192条名句</a></p>
+		                </div>
+		                <div class="tool">
+		                    <div class="shoucang"><img id="likeImg474" name="0" onload="selectLikeAuthor(474)" onclick="changeLikeAuthor(474,'869DAC6F39C1C028','http://so.gushiwen.cn/authors/default.aspx')" src="https://song.gushiwen.cn/siteimg/shou-cang.png" alt="收藏" width="19" height="19" /></div>
+		                    <div class="toolpinglun"><a href="#"><img src="img/down-load.png" alt="下载" width="19" height="19" /></a></div>
+		                    <div class="toolpinglun"><a href="#"><img src="img/co-py.png" alt="复制" width="19" height="19" /></a></div>
+		                    <div class="toolpinglun" ><a href="#"><img src="img/tool-more.png" alt="详情" width="19" height="19" /></a></div>
+		                    <div class="jiucuo"><a href="#">完善</a></div>
+		                    </div>
+		            </div>
+		             
+		
+		
+         <form id="FromPage" method="get" action="#" onsubmit="return PageSubmit()">
+                   <div class="pagesright">
+                   
+                     <a class="amore" href="shopping.html">下一页</a>
+                      
+                                         <a style=" color:#808080;background-color:#e7e6d8;">上一页</a>
+                                         
+                             <span style=" background-color:#E1E0C7; border:0px; margin-top:22px; width:auto;">/ 20+页</span>
+                             <span class="curent"><input id="putpage" name="p" value="1" autocomplete="off" onblur="SubPage()" /></span>
+                             <label id="temppage" style="display:none;">1</label>
+                             <label id="sumPage" style="display:none;">20</label>
+                             <input type="hidden" name="c" value="不限" />
+                </div>
+                </form>
+                </div>
+                <div id="leftLuesuo" class="sons" style=" display:none;">
+                     <div class="typecont" style="border:0px;">
+                       
+                           <span><a href="#" target="_blank">李白</a>(唐代)</span>
+                           
+                           <span><a href="#" target="_blank">苏轼</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_85097dd0c645.aspx" target="_blank">白居易</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_515ea88d1858.aspx" target="_blank">杜甫</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_9cb3b7c0e4a0.aspx" target="_blank">李清照</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_a7900666497f.aspx" target="_blank">辛弃疾</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_52fceee85532.aspx" target="_blank">王维</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_01611cc80faf.aspx" target="_blank">纳兰性德</a>(清代)</span>
+                           
+                           <span><a href="/authorv_bc94c92721b8.aspx" target="_blank">李商隐</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_efd5da0ed1a1.aspx" target="_blank">陆游</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_07d17f8539d7.aspx" target="_blank">陶渊明</a>(魏晋)</span>
+                           
+                           <span><a href="/authorv_e3c4e8cf2646.aspx" target="_blank">刘禹锡</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_05635286bf64.aspx" target="_blank">李煜</a>(五代)</span>
+                           
+                           <span><a href="/authorv_727e9dff8850.aspx" target="_blank">杜牧</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_7ab3b8200774.aspx" target="_blank">欧阳修</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_1abe13750637.aspx" target="_blank">韩愈</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_6485481407d1.aspx" target="_blank">王安石</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_0ba13a22799e.aspx" target="_blank">柳宗元</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_3811e4e1f460.aspx" target="_blank">孟浩然</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_682bdf0fd34e.aspx" target="_blank">柳永</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_9c69482f885f.aspx" target="_blank">屈原</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_f4d9b1ed94dc.aspx" target="_blank">曹操</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_201a0677dee4.aspx" target="_blank">元稹</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_74d46d599f15.aspx" target="_blank">李贺</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_c367ccd8cd08.aspx" target="_blank">温庭筠</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_d9343fa5dac7.aspx" target="_blank">王昌龄</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_c2c3edb9c1b1.aspx" target="_blank">范仲淹</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_e6b970da08cd.aspx" target="_blank">王勃</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_0969d1da1ac1.aspx" target="_blank">岑参</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_6c695909f577.aspx" target="_blank">曹植</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_1585930d4e76.aspx" target="_blank">左丘明</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_20e68621f077.aspx" target="_blank">晏殊</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_f01178aaa8c0.aspx" target="_blank">司马迁</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_d4825d86f017.aspx" target="_blank">秦观</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_677ad0bb97e7.aspx" target="_blank">杨万里</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_e82a672a1ca9.aspx" target="_blank">诸葛亮</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_00ea9cc9fdbf.aspx" target="_blank">韦应物</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_568070f3fde8.aspx" target="_blank">贾岛</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_bdbd5be2bd0b.aspx" target="_blank">唐寅</a>(明代)</span>
+                           
+                           <span><a href="/authorv_1e6d9d77697a.aspx" target="_blank">晏几道</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_76758677c136.aspx" target="_blank">方干</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_b3e23d54ee99.aspx" target="_blank">刘长卿</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_2f7f3273612a.aspx" target="_blank">孟郊</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_ae228ff17e71.aspx" target="_blank">朱熹</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_bc5bd15a8c34.aspx" target="_blank">岳飞</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_7ce628a673ef.aspx" target="_blank">韦庄</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_252e1b6ee61f.aspx" target="_blank">黄庭坚</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_7d4ee0783235.aspx" target="_blank">曹雪芹</a>(清代)</span>
+                           
+                           <span><a href="/authorv_6e442cfc26e0.aspx" target="_blank">庄周</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_b44661291893.aspx" target="_blank">高适</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_40ce21be572d.aspx" target="_blank">周邦彦</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_7ef6502f1e96.aspx" target="_blank">文天祥</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_3de7172b3782.aspx" target="_blank">罗隐</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_0f2fe2d36f61.aspx" target="_blank">张九龄</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_05460f6423b0.aspx" target="_blank">张籍</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_236f882d5f10.aspx" target="_blank">齐己</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_d0f71489043c.aspx" target="_blank">马致远</a>(元代)</span>
+                           
+                           <span><a href="/authorv_ffbc39f27901.aspx" target="_blank">卓文君</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_be16b2b23d0a.aspx" target="_blank">陈子昂</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_1a92cf411c9c.aspx" target="_blank">荀子</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_ff17134b62ff.aspx" target="_blank">许浑</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_f8b6b7d9fab9.aspx" target="_blank">姜夔</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_c1faf0e6cdcb.aspx" target="_blank">范成大</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_a84be3cddeda.aspx" target="_blank">司马相如</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_ae8538b4e917.aspx" target="_blank">王建</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_787d4a1969b8.aspx" target="_blank">张若虚</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_15d08afc7439.aspx" target="_blank">贾谊</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_f59c39d8cecd.aspx" target="_blank">李耳</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_637fa1f1b67a.aspx" target="_blank">王之涣</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_389bc382deaf.aspx" target="_blank">贺铸</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_e0c140ccdde2.aspx" target="_blank">龚自珍</a>(清代)</span>
+                           
+                           <span><a href="/authorv_65350a0ae0a0.aspx" target="_blank">鱼玄机</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_179f3ae96ec4.aspx" target="_blank">皎然</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_b8f9680ff0fe.aspx" target="_blank">骆宾王</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_a4c70d8d6e0e.aspx" target="_blank">郑燮</a>(清代)</span>
+                           
+                           <span><a href="/authorv_2d4282baeca8.aspx" target="_blank">张祜</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_79e0e9d1f260.aspx" target="_blank">贺知章</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_46b894036ae3.aspx" target="_blank">陆龟蒙</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_cce8f82d981b.aspx" target="_blank">张岱</a>(明代)</span>
+                           
+                           <span><a href="/authorv_a6acb3e3e0dd.aspx" target="_blank">贯休</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_f57e6789865a.aspx" target="_blank">吴文英</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_932e5d797574.aspx" target="_blank">韩非</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_782b7ec7e8ae.aspx" target="_blank">卢纶</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_3fade50333c4.aspx" target="_blank">杜荀鹤</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_b9737a950f1f.aspx" target="_blank">周敦颐</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_87bdc6fea2cb.aspx" target="_blank">元好问</a>(金朝)</span>
+                           
+                           <span><a href="/authorv_8a87a861d840.aspx" target="_blank">谢灵运</a>(南北朝)</span>
+                           
+                           <span><a href="/authorv_454d6e3e96ce.aspx" target="_blank">王羲之</a>(魏晋)</span>
+                           
+                           <span><a href="/authorv_f3054465947d.aspx" target="_blank">于谦</a>(明代)</span>
+                           
+                           <span><a href="/authorv_d82bfa645313.aspx" target="_blank">朱敦儒</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_0478318c4998.aspx" target="_blank">仓央嘉措</a>(清代)</span>
+                           
+                           <span><a href="/authorv_74546b0b8005.aspx" target="_blank">袁枚</a>(清代)</span>
+                           
+                           <span><a href="/authorv_c364b4db5ff7.aspx" target="_blank">宋玉</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_273c4b7b5807.aspx" target="_blank">白朴</a>(元代)</span>
+                           
+                           <span><a href="/authorv_4b13c1698a34.aspx" target="_blank">郦道元</a>(南北朝)</span>
+                           
+                           <span><a href="/authorv_ce61301b9cf7.aspx" target="_blank">韩偓</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_3e4eac5829e0.aspx" target="_blank">冯延巳</a>(五代)</span>
+                           
+                           <span><a href="/authorv_5456aa6d3e19.aspx" target="_blank">蒋捷</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_61eacce8c314.aspx" target="_blank">姚合</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_c604082cdd76.aspx" target="_blank">曾国藩</a>(清代)</span>
+                           
+                           <span><a href="/authorv_5219605011ab.aspx" target="_blank">钱起</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_9ff65fca16cc.aspx" target="_blank">崔颢</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_8a732b57b0ac.aspx" target="_blank">曹丕</a>(魏晋)</span>
+                           
+                           <span><a href="/authorv_ed13dc2f731c.aspx" target="_blank">皮日休</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_f5e3721e014f.aspx" target="_blank">李峤</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_dcf7e0284e0d.aspx" target="_blank">张先</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_58f3c71f76d8.aspx" target="_blank">杨慎</a>(明代)</span>
+                           
+                           <span><a href="/authorv_83fa70cf5a10.aspx" target="_blank">张孝祥</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_626c0d0c46c9.aspx" target="_blank">阮籍</a>(魏晋)</span>
+                           
+                           <span><a href="/authorv_03097a189759.aspx" target="_blank">刘义庆</a>(南北朝)</span>
+                           
+                           <span><a href="/authorv_3b9be9277871.aspx" target="_blank">嵇康</a>(魏晋)</span>
+                           
+                           <span><a href="/authorv_af3666b92472.aspx" target="_blank">戴叔伦</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_44ca268d5c43.aspx" target="_blank">刘克庄</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_74553f397a03.aspx" target="_blank">苏洵</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_6864013c4ea6.aspx" target="_blank">司马光</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_3001715a9955.aspx" target="_blank">赵嘏</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_1b2c0f1e1dd4.aspx" target="_blank">朱淑真</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_161948f422c0.aspx" target="_blank">苏辙</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_d0a092a4b65b.aspx" target="_blank">卢照邻</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_e8d2cec3ffbe.aspx" target="_blank">王守仁</a>(明代)</span>
+                           
+                           <span><a href="/authorv_0410a34d2e7c.aspx" target="_blank">宋之问</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_4367d1b4dd8c.aspx" target="_blank">刘向</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_787b2f03c695.aspx" target="_blank">鲍照</a>(南北朝)</span>
+                           
+                           <span><a href="/authorv_ea0c2ce3af6d.aspx" target="_blank">项羽</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_9a052bcededd.aspx" target="_blank">王冕</a>(元代)</span>
+                           
+                           <span><a href="/authorv_5c479a1b49fb.aspx" target="_blank">关汉卿</a>(元代)</span>
+                           
+                           <span><a href="/authorv_da2cd14d14b1.aspx" target="_blank">李益</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_5ca283e748ca.aspx" target="_blank">郑谷</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_c3783dd37722.aspx" target="_blank">李斯</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_c6454212c8da.aspx" target="_blank">张炎</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_5452bed2115f.aspx" target="_blank">刘辰翁</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_90bafbe61cf7.aspx" target="_blank">权德舆</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_4de4bf6be5b6.aspx" target="_blank">孙武</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_a56fa849ea37.aspx" target="_blank">张可久</a>(元代)</span>
+                           
+                           <span><a href="/authorv_ebab180c2bf9.aspx" target="_blank">蒲松龄</a>(清代)</span>
+                           
+                           <span><a href="/authorv_e429c2a34cf3.aspx" target="_blank">张养浩</a>(元代)</span>
+                           
+                           <span><a href="/authorv_b8ce6bb93501.aspx" target="_blank">韩翃</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_e9907dd08d8b.aspx" target="_blank">皇甫冉</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_a4f5884125b1.aspx" target="_blank">司空图</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_755ffc8b28b0.aspx" target="_blank">李世民</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_00133162b1d0.aspx" target="_blank">宋濂</a>(明代)</span>
+                           
+                           <span><a href="/authorv_61b1f8244d24.aspx" target="_blank">赵长卿</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_818db43d0d81.aspx" target="_blank">叶绍翁</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_1a08221468a4.aspx" target="_blank">薛涛</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_3cf87fbd143c.aspx" target="_blank">林逋</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_8976db397833.aspx" target="_blank">陈与义</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_e47835478657.aspx" target="_blank">张说</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_7d5432b45289.aspx" target="_blank">李绅</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_e142a6aeba9d.aspx" target="_blank">归有光</a>(明代)</span>
+                           
+                           <span><a href="/authorv_da41370d6cf5.aspx" target="_blank">吴均</a>(南北朝)</span>
+                           
+                           <span><a href="/authorv_b728df127bcb.aspx" target="_blank">谢朓</a>(南北朝)</span>
+                           
+                           <span><a href="/authorv_d2c43a8ea55a.aspx" target="_blank">顾况</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_a4d0598c1f4c.aspx" target="_blank">吴融</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_de8c4d88daec.aspx" target="_blank">列子</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_82dc795fbcac.aspx" target="_blank">李端</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_45c7b7ffa770.aspx" target="_blank">程垓</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_54852b07c8f0.aspx" target="_blank">孔丘</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_2f56f31e2127.aspx" target="_blank">王翰</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_b2062eef6b39.aspx" target="_blank">庾信</a>(南北朝)</span>
+                           
+                           <span><a href="/authorv_961d3db85f01.aspx" target="_blank">黄景仁</a>(清代)</span>
+                           
+                           <span><a href="/authorv_6fbeeeefce3b.aspx" target="_blank">纪昀</a>(清代)</span>
+                           
+                           <span><a href="/authorv_7bfda9741f8c.aspx" target="_blank">李之仪</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_79bc07db1e74.aspx" target="_blank">徐再思</a>(元代)</span>
+                           
+                           <span><a href="/authorv_0955ca350ffe.aspx" target="_blank">马戴</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_49f2eee37817.aspx" target="_blank">杨炯</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_02835e06c206.aspx" target="_blank">吕岩</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_623fb18b7792.aspx" target="_blank">张继</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_06c9f58eb897.aspx" target="_blank">吴潜</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_4cbc370b2db5.aspx" target="_blank">陶弘景</a>(南北朝)</span>
+                           
+                           <span><a href="/authorv_2b648ebf4318.aspx" target="_blank">司空曙</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_68a453f313d5.aspx" target="_blank">常建</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_6d77998d6dac.aspx" target="_blank">王绩</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_3722daca376d.aspx" target="_blank">吕蒙正</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_cab314bc1132.aspx" target="_blank">唐婉</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_02a7e7e6cfd2.aspx" target="_blank">张元干</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_870e6ba7bbf4.aspx" target="_blank">班固</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_45bdbf3f2268.aspx" target="_blank">黄巢</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_894a6c66e6a6.aspx" target="_blank">周密</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_22f0b211ccbc.aspx" target="_blank">李颀</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_ee60971ad9b4.aspx" target="_blank">张乔</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_a1f725c6aa25.aspx" target="_blank">刘基</a>(明代)</span>
+                           
+                           <span><a href="/authorv_6dafeedcb48e.aspx" target="_blank">戎昱</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_af94a5c4ceea.aspx" target="_blank">王湾</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_2466a6bc5628.aspx" target="_blank">刘邦</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_d6bbd9ff7e78.aspx" target="_blank">晁补之</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_04138f12360f.aspx" target="_blank">崔护</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_636cef5b84f0.aspx" target="_blank">张衡</a>(两汉)</span>
+                           
+                           <span><a href="/authorv_14fd383123cc.aspx" target="_blank">陈著</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_d721c48536ea.aspx" target="_blank">沈佺期</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_d4952941ee78.aspx" target="_blank">陆机</a>(魏晋)</span>
+                           
+                           <span><a href="/authorv_665b8c438556.aspx" target="_blank">颜真卿</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_b9cb27168016.aspx" target="_blank">姜子牙</a>(先秦)</span>
+                           
+                           <span><a href="/authorv_3d8659414462.aspx" target="_blank">曾巩</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_12ce600de96c.aspx" target="_blank">毛滂</a>(宋代)</span>
+                           
+                           <span><a href="/authorv_e168d344dc03.aspx" target="_blank">李渔</a>(清代)</span>
+                           
+                           <span><a href="/authorv_6d29abb0d24a.aspx" target="_blank">左思</a>(魏晋)</span>
+                           
+                           <span><a href="/authorv_08f4478aee24.aspx" target="_blank">朱庆馀</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_2ea441fb332f.aspx" target="_blank">施肩吾</a>(唐代)</span>
+                           
+                           <span><a href="/authorv_bc168825cd92.aspx" target="_blank">陈寿</a>(魏晋)</span>
+                           
+                           <span><a href="/authorv_93c12cc01a9c.aspx" target="_blank">储光羲</a>(唐代)</span>
+                           
+                   </div>
+               </div>
+           </div>
+        <script src="./js/jquery-3.6.0.js"></script>
+       <script src="./js/user.js"></script>
+       <script type="text/javascript">
+           //取得cookie值
+           function getCookie(name) {
+               var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+       
+               if (arr = document.cookie.match(reg))
+       
+                   return unescape(arr[2]);
+               else
+                   return null;
+           }
+           //设置cookie值
+           function setCookie(name, value) {
+               var Days = 90;
+               var exp = new Date();
+               exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+               document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+           }
+       
+           var liebiao = 1;
+           if (getCookie("liebiaozhaiyao") != null) {
+               liebiao = getCookie("liebiaozhaiyao")
+           }
+       
+           if(1>1)
+           {
+               document.getElementById('leftZhankai').style.display = 'block';
+           }
+           else if (liebiao == 1) {
+               document.getElementById('id-Liebiao').style.color = "#999999";
+               document.getElementById('id-Zhaiyao').style.color = "#19537D";
+               document.getElementById('id-Zhaiyao').style.cursor = "pointer";
+       
+               document.getElementById('id-Liebiao').style.display = "block";
+               document.getElementById('id-Zhaiyao').style.display = "block";
+               document.getElementById('id-Xiexian').style.display = "block";
+               
+               document.getElementById('leftZhankai').style.display = 'block';
+               document.getElementById('leftLuesuo').style.display = 'none';
+           }
+           else {
+               document.getElementById('id-Liebiao').style.color = "#19537D";
+               document.getElementById('id-Zhaiyao').style.color = "#999999";
+               document.getElementById('id-Liebiao').style.cursor = "pointer";
+       
+               document.getElementById('id-Liebiao').style.display = "block";
+               document.getElementById('id-Zhaiyao').style.display = "block";
+               document.getElementById('id-Xiexian').style.display = "block";
+       
+               document.getElementById('leftZhankai').style.display = 'none';
+               document.getElementById('leftLuesuo').style.display = 'block';
+       
+               if(200<200)
+               {
+                   document.getElementById('right1').style.display = 'none';
+                   document.getElementById('right2').style.display = 'none';
+               }
+           }
+       
+           $("#id-Liebiao").click(function () {
+               document.getElementById('id-Liebiao').style.color = "#999999";
+               document.getElementById('id-Zhaiyao').style.color = "#19537D";
+               document.getElementById('id-Zhaiyao').style.cursor = "pointer";
+       
+               document.getElementById('leftZhankai').style.display = 'block';
+               document.getElementById('leftLuesuo').style.display = 'none';
+       
+               if(200<200)
+               {
+                   document.getElementById('right1').style.display = 'block';
+                   document.getElementById('right2').style.display = 'block';
+               }
+       
+               setCookie("liebiaozhaiyao", "1");
+           })
+           $("#id-Zhaiyao").click(function () {
+               document.getElementById('id-Liebiao').style.color = "#19537D";
+               document.getElementById('id-Zhaiyao').style.color = "#999999";
+               document.getElementById('id-Liebiao').style.cursor = "pointer";
+       
+               document.getElementById('leftZhankai').style.display = 'none';
+               document.getElementById('leftLuesuo').style.display = 'block';
+       
+               if(200<200)
+               {
+                   document.getElementById('right1').style.display = 'none';
+                   document.getElementById('right2').style.display = 'none';
+               }
+       
+               setCookie("liebiaozhaiyao", "0");
+           })
+       
+           $("#close").click(function () {
+               $("#threeWeixin").fadeOut("slow");
+               clearInterval(intervalErweima);
+           })
+       
+           $("#close2").click(function () {
+               $("#threeWeixin2").fadeOut("slow");
+               clearInterval(intervalErweima2);
+           })
+           var timesRun = 0;
+           var scene_id = Math.floor((Math.random() * 9999999) + 100000000);
+       </script>
+      
+       
+       
+       <script type="text/javascript">
+           window.onload = function () {
+               setIframeHeight(document.getElementById('external-frame'));
+           };
+       </script>
+       
+       <script defer="defer" src="/js/skinso20210709.js" type="text/javascript"></script>
+	</body>
+</html>
