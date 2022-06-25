@@ -1,0 +1,4 @@
+#Thu Jun 20 18:37:02 CST 2019
+eclipse.preferences.version=1
+validator.Checked=WebRoot/WEB-INF/jsp/login.jsp,WebRoot/js/jquery.dataTables.min.js,WebRoot/js/jquery-1.11.3.min.js,src/com/itheima/core/dao/UserDao.java,WebRoot/WEB-INF/jsp/customer.jsp
+validator.Unchecked=
